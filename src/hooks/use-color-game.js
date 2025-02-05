@@ -147,10 +147,16 @@ export const useColorGame = () => {
           ...prevState,
           score: prevState.score + 1,
         }));
-        setGameStatus(getRandomMessage(correctMessages));
+        setGameStatus({
+          type: "correct",
+          message: getRandomMessage(correctMessages),
+        });
         setTimeout(() => startNewRound(), 1500);
       } else {
-        setGameStatus(getRandomMessage(wrongMessages));
+        setGameStatus({
+          type: "wrong",
+          message: getRandomMessage(wrongMessages),
+        });
       }
     },
     [gameState.targetColor, setGameState, setGameStatus, startNewRound]
