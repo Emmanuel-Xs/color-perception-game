@@ -211,7 +211,7 @@ body {
 .new-game {
   font-size: 18px;
   padding: 10px 20px;
-  background-color: #4caf50;
+  background-color: rebeccapurple;
   color: white;
   border: none;
   border-radius: 5px;
@@ -220,5 +220,5 @@ body {
 }
 
 .new-game:hover {
-  background-color: #45a049;
+  background-color: #783cb4;
 }
