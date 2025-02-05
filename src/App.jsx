@@ -12,7 +12,7 @@ export default function App() {
     score,
     gameStatus,
     handleColorGuess,
-    resetGame,
+    resetGame: newGame,
     clearGameStatus,
   } = useColorGame();
 
@@ -34,7 +34,7 @@ export default function App() {
         <button
           data-testid="newGameButton"
           className="new-game"
-          onClick={resetGame}
+          onClick={newGame}
         >
           New Game
         </button>

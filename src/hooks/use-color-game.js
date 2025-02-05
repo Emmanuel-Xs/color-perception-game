@@ -46,6 +46,15 @@ const COLORS = [
   "#708090",
 ];
 
+const shuffle = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 const getRandomColor = () => {
   return COLORS[Math.floor(Math.random() * COLORS.length)];
 };
@@ -58,7 +67,7 @@ const generateColorOptions = (targetColor) => {
       options.push(color);
     }
   }
-  return options.sort(() => Math.random() - 0.5);
+  return shuffle(options);
 };
 
 export const useColorGame = () => {
