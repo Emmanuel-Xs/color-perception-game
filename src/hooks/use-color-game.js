@@ -89,7 +89,7 @@ export const useColorGame = () => {
           ...prevState,
           score: prevState.score + 1,
         }));
-        setGameStatus("🎉🎉🎉 Correct!");
+        setGameStatus("😎👌🔥 Correct!");
         setTimeout(() => startNewRound(), 1500);
       } else {
         setGameStatus("😵 Wrong, try again!");
