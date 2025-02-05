@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Press+Start+2P&family=Tektur:wght@400..900&display=swap");
 
 *,
 *::before,
@@ -19,7 +19,10 @@ body {
   width: min(600px, calc(100% - 2rem));
   margin: 0 auto;
   text-align: center;
-  font-family: "Lato", serif;
+  font-family: "Instrument Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
   font-weight: 400;
   padding-block: 20px;
   animation: slideIn 0.5s ease-in-out;
@@ -67,10 +70,20 @@ body {
   width: min(450px, 100%);
   height: 200px;
   margin: 30px auto;
-  border: 2px solid #333;
+  border: 2px solid rebeccapurple;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-box-text {
+  font-family: "Press Start 2P", serif;
+  font-size: 96px;
+  font-weight: bold;
+  color: rebeccapurple;
 }
 
 .color-options {
@@ -202,14 +215,24 @@ body {
 }
 
 .score {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   margin: 10px 0;
+  font-family: "Tektur", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
   font-variant-numeric: tabular-nums;
 }
 
 .new-game {
   font-size: 18px;
+  font-family: "Tektur", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
   padding: 10px 20px;
   background-color: rebeccapurple;
   color: white;

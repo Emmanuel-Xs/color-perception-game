@@ -46,6 +46,52 @@ const COLORS = [
   "#708090",
 ];
 
+const correctMessages = [
+  "😎👌🔥 Correct!",
+  "🎉 Awesome! You got it!",
+  "✅ You're right!",
+  "💝💐🏆 Perfect!",
+  "👏🍾 Brilliant!",
+  "🙌🧠 Fantastic!",
+  "🔔🤩 Outstanding!",
+  "˗ˏˋ ★ ˎˊ˗👍 Spot on!",
+  "🥳👌 You nailed it!",
+  "🚀😎 Amazing!",
+  "🌟 Super job!",
+  "💥 Boom, correct!",
+  "🎊 Victory!",
+  "👌 Nailed it!",
+  "🔝⚡ Top-notch!",
+  "🥇🍾✨ Champion!",
+  "✨💫⭐️ Great work!",
+  "👑 You're a star!",
+  "🦸 Correct, hero!",
+  "🔥✨❤️‍🔥 Flawless!",
+];
+
+const wrongMessages = [
+  "😵 Wrong, try again!",
+  "🥴🚩🎭 Oops, that's not it!",
+  "😔 Not quite, try again!",
+  "🚨🛠️ Incorrect! Give it another shot!",
+  "😓 Almost, but not quite!",
+  "🙁🙅‍♀️ No, that's not right!",
+  "😕 Try once more!",
+  "😩 Better luck next time!",
+  "😢🚧 That's not correct!",
+  "💔😑 Wrong answer!",
+  "😞 Keep trying!",
+  "🙄🤥 Not the one!",
+  "😬🙆 Oops, wrong guess!",
+  "👎🤒 That's not it!",
+  "😣😮‍💨 Incorrect, try again!",
+  "🤦🆘 Wrong answer!",
+  "😟 Try again!",
+  "🤷 Not that one!",
+  "🧐 Think again!",
+  "❤️‍🩹💊 Incorrect!",
+];
+
 const shuffle = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -69,6 +115,9 @@ const generateColorOptions = (targetColor) => {
   }
   return shuffle(options);
 };
+
+const getRandomMessage = (messages) =>
+  messages[Math.floor(Math.random() * messages.length)];
 
 export const useColorGame = () => {
   const [gameState, setGameState] = useSessionStorage("color-game-state", {
@@ -98,10 +147,10 @@ export const useColorGame = () => {
           ...prevState,
           score: prevState.score + 1,
         }));
-        setGameStatus("😎👌🔥 Correct!");
+        setGameStatus(getRandomMessage(correctMessages));
         setTimeout(() => startNewRound(), 1500);
       } else {
-        setGameStatus("😵 Wrong, try again!");
+        setGameStatus(getRandomMessage(wrongMessages));
       }
     },
     [gameState.targetColor, setGameState, setGameStatus, startNewRound]

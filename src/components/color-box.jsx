@@ -6,7 +6,9 @@ const ColorBox = ({ color }) => {
       data-testid="colorBox"
       className="color-box"
       style={{ backgroundColor: color }}
-    ></div>
+    >
+      <p className="color-box-text">?</p>
+    </div>
   );
 };
 
